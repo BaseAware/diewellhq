@@ -149,10 +149,28 @@
 </section>
 
 <script>
-document.getElementById('f').addEventListener('submit',function(e){
-  e.preventDefault();
-  document.getElementById('n').textContent='Prototype — wire this field to Ghost Members at launch.';
-});
+(function(){
+  var form=document.getElementById('f'), input=document.getElementById('e'), note=document.getElementById('n');
+  var btn=form.querySelector('button');
+  form.addEventListener('submit',function(ev){
+    ev.preventDefault();
+    var email=(input.value||'').trim();
+    if(!email){return;}
+    btn.disabled=true; note.textContent='Sending\u2026';
+    fetch('https://mind-set.ghost.io/members/api/send-magic-link/',{
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({email:email,emailType:'subscribe',labels:[],name:''})
+    }).then(function(r){
+      btn.disabled=false;
+      if(r.ok){form.reset();note.textContent='Check your inbox to confirm.';}
+      else{note.textContent='That didn\u2019t go through. Try again in a moment.';}
+    }).catch(function(){
+      btn.disabled=false;
+      note.textContent='That didn\u2019t go through. Try again in a moment.';
+    });
+  });
+})();
 </script>
 </body>
 </html>
