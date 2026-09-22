@@ -148,8 +148,16 @@
   }
   @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
 
-  .card__art--photo{padding:14px 12px 10px;background:linear-gradient(180deg,rgba(255,255,255,.035),transparent 65%)}
-  .card__art--photo img{height:auto;width:100%;max-height:100%;object-fit:contain;display:block}
+  .card__art--photo{padding:0;background:#fff;overflow:hidden}
+  .card__art--photo img{height:100%;width:100%;object-fit:contain;display:block}
+
+  .read{padding:0;overflow:hidden}
+  .read__art{aspect-ratio:16/9;overflow:hidden;border-bottom:1px solid var(--rule);background:var(--ink-2)}
+  .read__art img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s ease}
+  .read:hover .read__art img{transform:scale(1.03)}
+  .read > :not(.read__art){margin-inline:clamp(18px,2vw,26px)}
+  .read > .read__kicker{margin-top:24px}
+  .read > .read__more{margin-bottom:24px}
 </style>
 </head>
 <body>
@@ -201,32 +209,32 @@
 
       <div class="grid">
         <a class="card" href="https://die-well.printify.me/product/31168883">
-          <div class="card__art card__art--photo"><img src="shop/tee29.webp" alt="Die Well wordmark tee, navy" loading="lazy" width="800" height="760"></div>
-          <div class="card__foot"><span class="card__name">Die Well Wordmark Tee</span><span class="card__price">$29</span></div>
+          <div class="card__art card__art--photo"><img src="shop/tee29.jpg" alt="Die Well wordmark tee, solid black" loading="lazy" width="860" height="860"></div>
+          <div class="card__foot"><span class="card__name">Die Well Tee &mdash; Black</span><span class="card__price">$29</span></div>
           <div class="card__type">UNISEX COTTON CREW</div>
         </a>
         <a class="card" href="https://die-well.printify.me/product/31169013">
-          <div class="card__art card__art--photo"><img src="shop/tee19.webp" alt="Die Well wordmark tee, grey" loading="lazy" width="800" height="760"></div>
-          <div class="card__foot"><span class="card__name">Spear Tee</span><span class="card__price">$19</span></div>
+          <div class="card__art card__art--photo"><img src="shop/tee19.jpg" alt="Die Well wordmark tee, solid white" loading="lazy" width="860" height="860"></div>
+          <div class="card__foot"><span class="card__name">Die Well Tee &mdash; White</span><span class="card__price">$19</span></div>
           <div class="card__type">UNISEX COTTON CREW</div>
         </a>
         <a class="card" href="https://die-well.printify.me/product/28603772">
-          <div class="card__art card__art--photo"><img src="shop/mindset30.webp" alt="Mind. Set. tee, natural" loading="lazy" width="800" height="760"></div>
+          <div class="card__art card__art--photo"><img src="shop/mindset30.jpg" alt="Mind. Set. tee, CVC sand" loading="lazy" width="860" height="860"></div>
           <div class="card__foot"><span class="card__name">Mind. Set. Tee</span><span class="card__price">$30</span></div>
           <div class="card__type">UNISEX COTTON CREW</div>
         </a>
         <a class="card" href="https://die-well.printify.me/product/28603971">
-          <div class="card__art card__art--photo"><img src="shop/mindset43.webp" alt="Die Well heavyweight tee, black" loading="lazy" width="800" height="760"></div>
-          <div class="card__foot"><span class="card__name">Mind. Set. Heavyweight Tee</span><span class="card__price">$43</span></div>
-          <div class="card__type">UNISEX COTTON CREW</div>
+          <div class="card__art card__art--photo"><img src="shop/mindset43.jpg" alt="Die Well performance tee, black" loading="lazy" width="860" height="860"></div>
+          <div class="card__foot"><span class="card__name">Die Well Performance Tee</span><span class="card__price">$43</span></div>
+          <div class="card__type">MOISTURE-WICKING TEE</div>
         </a>
         <a class="card" href="https://die-well.printify.me/product/31169573">
-          <div class="card__art card__art--photo"><img src="shop/crewneck.webp" alt="Die Well crewneck sweatshirt, grey" loading="lazy" width="800" height="760"></div>
+          <div class="card__art card__art--photo"><img src="shop/crewneck.jpg" alt="Die Well crewneck sweatshirt, grey" loading="lazy" width="860" height="860"></div>
           <div class="card__foot"><span class="card__name">Die Well Crewneck</span><span class="card__price">$50</span></div>
           <div class="card__type">LIGHTWEIGHT SWEATSHIRT</div>
         </a>
         <a class="card" href="https://die-well.printify.me/product/31168452">
-          <div class="card__art card__art--photo"><img src="shop/trucker.webp" alt="Die Well trucker cap, black" loading="lazy" width="800" height="760"></div>
+          <div class="card__art card__art--photo"><img src="shop/trucker.jpg" alt="Die Well trucker cap, black" loading="lazy" width="860" height="860"></div>
           <div class="card__foot"><span class="card__name">Tactical Trucker</span><span class="card__price">$39</span></div>
           <div class="card__type">STRUCTURED CAP</div>
         </a>
@@ -285,24 +293,28 @@
 
       <div class="grid grid--reading">
         <a class="read" href="mindset/free-radicals.html">
+          <div class="read__art"><img src="mindset/img/free-radicals.jpg" alt="First Officer Engage — Free Radicals" loading="lazy" width="1400" height="788"></div>
           <p class="read__kicker">ESSAY</p>
           <h3 class="read__title">Free Radicals</h3>
           <p class="read__dek">A man picked up a sledgehammer and walked toward automatic weapons fire in Nairobi. He wasn't brave that morning &mdash; he was brave before it, and the morning presented the bill.</p>
           <p class="read__more">READ &rarr;</p>
         </a>
         <a class="read" href="mindset/sheepdog.html">
+          <div class="read__art"><img src="mindset/img/sheepdog.jpg" alt="Gentle with the flock. Fierce toward the wolf." loading="lazy" width="1400" height="788"></div>
           <p class="read__kicker">ESSAY</p>
           <h3 class="read__title">The Sheepdog Is 2,400 Years Older Than You Think</h3>
           <p class="read__dek">Everyone credits the patch to a 2004 book. The guardian, the flock and the wolf are Plato's &mdash; and the original is far more demanding than the version on the truck glass.</p>
           <p class="read__more">READ &rarr;</p>
         </a>
         <a class="read" href="mindset/courage-is-built.html">
+          <div class="read__art"><img src="mindset/img/courage.jpg" alt="Patrol officer loadout, 1999 versus 2024" loading="lazy" width="1400" height="788"></div>
           <p class="read__kicker">ESSAY</p>
           <h3 class="read__title">Courage Is Built, Not Bought</h3>
           <p class="read__dek">More gear. Same human. Four decades, five incidents, and a response time that never moved.</p>
           <p class="read__more">READ &rarr;</p>
         </a>
         <a class="read" href="mindset/pact.html">
+          <div class="read__art"><img src="mindset/img/pact.jpg" alt="PACT — Prepare, Awareness, Control, Take Action" loading="lazy" width="1400" height="788"></div>
           <p class="read__kicker">FRAMEWORK</p>
           <h3 class="read__title">PACT: Modular Readiness</h3>
           <p class="read__dek">Prepare, Awareness, Control, Take Action. Not a sequence &mdash; a system, each part holding up the others when stress takes the rest offline.</p>

@@ -65,6 +65,9 @@
   .back{display:inline-block;margin-top:34px;font-family:var(--display);font-size:15px;letter-spacing:.18em;color:var(--bone-faint);text-decoration:none}
   .back:hover{color:var(--bone)}
   @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+
+  .hero-art{margin:clamp(26px,3.5vw,40px) 0 0;border:1px solid var(--rule);background:var(--ink-2);overflow:hidden}
+  .hero-art img{width:100%;height:auto;display:block}
 </style>
 <link rel="canonical" href="https://diewellhq.com/mindset/free-radicals.html">
 </head>
@@ -87,6 +90,8 @@
     <p class="dek">Nairobi, a sledgehammer, and what the Uvalde effect means for how many of them are coming.</p>
     <p class="byline">BY BRAD SPICER · MIND. SET.</p>
   </header>
+
+  <figure class="hero-art"><img src="img/free-radicals.jpg" alt="First Officer Engage — Free Radicals" width="1400" height="788"></figure>
 
   <article>
 
@@ -119,28 +124,10 @@
 </section>
 
 <script>
-(function(){
-  var form=document.getElementById('f'), input=document.getElementById('e'), note=document.getElementById('n');
-  var btn=form.querySelector('button');
-  form.addEventListener('submit',function(ev){
-    ev.preventDefault();
-    var email=(input.value||'').trim();
-    if(!email){return;}
-    btn.disabled=true; note.textContent='Sending\u2026';
-    fetch('https://mind-set.ghost.io/members/api/send-magic-link/',{
-      method:'POST',
-      headers:{'Content-Type':'application/json'},
-      body:JSON.stringify({email:email,emailType:'subscribe',labels:[],name:''})
-    }).then(function(r){
-      btn.disabled=false;
-      if(r.ok){form.reset();note.textContent='Check your inbox to confirm.';}
-      else{note.textContent='That didn\u2019t go through. Try again in a moment.';}
-    }).catch(function(){
-      btn.disabled=false;
-      note.textContent='That didn\u2019t go through. Try again in a moment.';
-    });
-  });
-})();
+document.getElementById('f').addEventListener('submit',function(e){
+  e.preventDefault();
+  document.getElementById('n').textContent='Prototype — wire this field to Ghost Members at launch.';
+});
 </script>
 </body>
 </html>
