@@ -335,7 +335,7 @@
           <h3 class="signup-block__h">GET IT FIRST.</h3>
           <p class="note" style="margin-top:8px;color:var(--bone-dim);font-size:16px">New essays, and new releases before they go live.</p>
         </div>
-        <form id="signup-form">
+        <form id="signup-form" action="https://diewell.substack.com/subscribe" method="get" target="_blank" rel="noopener">
           <label for="signup-email">Email address</label>
           <input id="signup-email" name="email" type="email" placeholder="you@email.com" required>
           <button type="submit">SUBSCRIBE</button>
@@ -359,13 +359,6 @@
   </div>
 </footer>
 
-<script>
-  document.getElementById('signup-form').addEventListener('submit', function (e) {
-    e.preventDefault();
-    document.getElementById('signup-note').textContent =
-      'Prototype — wire this field to Ghost Members at launch.';
-  });
-</script>
 
 </body>
 </html>
