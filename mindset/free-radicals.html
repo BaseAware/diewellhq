@@ -113,7 +113,7 @@
   <div class="wrap">
     <h3>GET IT FIRST.</h3>
     <p>New essays, and new releases before they go live.</p>
-    <form id="f">
+    <form id="f" action="https://diewell.substack.com/subscribe" method="get" target="_blank" rel="noopener">
       <label for="e">Email address</label>
       <input id="e" name="email" type="email" placeholder="you@email.com" required>
       <button type="submit">SUBSCRIBE</button>
@@ -123,11 +123,5 @@
   </div>
 </section>
 
-<script>
-document.getElementById('f').addEventListener('submit',function(e){
-  e.preventDefault();
-  document.getElementById('n').textContent='Prototype — wire this field to Ghost Members at launch.';
-});
-</script>
 </body>
 </html>
